@@ -1,0 +1,60 @@
+// NAMA       : Hasna Daffa Ulinnuha
+// NRP        : 5026221205
+// Jurusan    : Sistem Informasi
+
+#include <iostream>
+#include <cmath>
+using namespace std; 
+
+#define GRAVITASI 10 //10 m/s^2
+#define START_PENGUKURAN 1 //pengukuran dimulai dari 1 meter
+#define SUDUT 45 //sudut elevasi tembakan
+#define PHI 3.14//Disini saya menambahkan besar phi
+
+float l, Vo, input, Vt;
+
+int mencari_V0(int Vt, int l)
+{
+    /* Tulis fungsi mencari v0 kalian disini */
+    Vo = Vt - l ;
+    return Vo;
+}
+
+int speed_dgn_loss(int Vt)
+{
+    /* tulis fungsi hitung_loss kalian disini */
+    // Disini saya mencoba untuk menuliskan kemungkinan nilai Vt yang bisa diinput beserta besar lossernya sesuai dengan     tabel // 
+    if(Vt >= 2 && Vt <= 11){
+        l = 1;
+    
+    } else if (Vt >= 14 && Vt <= 23) {
+        l = 3;
+        
+    } else if (Vt >= 26 && Vt <= 30 ) {
+        l = 5;
+
+    } else {
+        cout<< "Nilai tidak ditemukan"; // Nilai tidak ditemukan karena mengalami kontradiksi. Misalkan saja diketahui Vt adalah 13 dan ingin mencari nilai Vo nya. Jika dikurang 3 maka hasilnya 10. Ketika Vo = 10 seharusnya losses = 1 dan bukan 3. Kemudian jika 13 dikurang 1 hasil Vo adalah 12. Sedangkan ketika Vo = 12 seharusnya losses = 3. //
+    }
+    return l; 
+    
+}
+
+int main() {
+    /* tulis kode utama kalian disini */
+    int x;
+    float Vt = 30; // Adapun part ini bisa diganti dengan "float Vt;". Kemudian di bagian bawah bisa ditambahakan perintah cout dan cin untuk menginput nilai yang diinginkan. Contoh "cout<<"Kecepatan Tangensial Max : "; cin>>Vt; "
+    
+    speed_dgn_loss(Vt);
+    mencari_V0(Vt, l);
+    
+    x = pow(Vo,2) * sin(2*SUDUT*PHI/180) /GRAVITASI; 
+    /* persamaan Jarak (x) = (Vo^2 * sin2a)/g */
+    Vt = sqrt(x*GRAVITASI/sin(2*SUDUT*PHI/180)) + l; 
+    /* persamaan Kecepatan Tangensial (Vt) = Vo + l; sedangkan persamaan dari Vo dapat dimodifikasi dari persamaan 
+    Vo = akar(x * g)/sin2a */
+    
+    cout << x << " " << Vt <<endl;
+    
+    return 0;
+}

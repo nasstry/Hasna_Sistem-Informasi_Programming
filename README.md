@@ -15,7 +15,9 @@ Constraints :
 * Kecepatan Awal(V0) (m/s)	| Losses(m/s)
   
   1 s.d. 10	               |       1
+  
   11 s.d. 20	             |       3
+  
   21 s.d. 30	             |       5
   
   (Sebagai contoh, Jika kecepatan awal (V0) 15 m/s, maka kecepatan tangensial (Vtangensial) roller Robot yang sebenarnya adalah 18 m/s.)

@@ -6,11 +6,11 @@ Input Format
 30 m/s
 
 Constraints
-> Karena peraturan, kecepatan tangensial roller mesin robot tidak boleh lebih dari 30 m/s.
-> Sudut tembakan adalah 45 derajat
-> Nilai gravitasi adalah 10 m/s^2
-> Selain itu robot penembak memiliki losses(kerugian) kecepatan sebagai berikut:
-> Kecepatan Awal(V0) (m/s)	| Losses(m/s)
+* Karena peraturan, kecepatan tangensial roller mesin robot tidak boleh lebih dari 30 m/s.
+* Sudut tembakan adalah 45 derajat
+* Nilai gravitasi adalah 10 m/s^2
+* Selain itu robot penembak memiliki losses(kerugian) kecepatan sebagai berikut:
+* Kecepatan Awal(V0) (m/s)	| Losses(m/s)
   1 s.d. 10	                      1
   11 s.d. 20	                    3
   21 s.d. 30	                    5
